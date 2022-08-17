@@ -4,6 +4,7 @@ import com.lizhi.common.Constants;
 import org.apache.commons.lang3.time.DurationFormatUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -25,7 +26,6 @@ public class App {
     static {
         System.setProperty("webdriver.chrome.driver", "C:\\chromeDriver\\chromedriver.exe");
     }
-
     public static ChromeDriver chromeDriver = new ChromeDriver();
 
 
@@ -200,6 +200,8 @@ public class App {
                 List<String> handles = new ArrayList<>(windowHandles);
                 chromeDriver.switchTo().window(handles.get(1));
                 chromeDriver.executeScript("var q=document.documentElement.scrollTop=500");
+                WebElement video = chromeDriver.findElement(By.cssSelector("video"));
+                chromeDriver.executeScript("arguments[0].muted = true;",video);
                 try {
                     chromeDriver.findElement(By.className("prism-big-play-btn")).click();
                 } catch (Exception e) {
