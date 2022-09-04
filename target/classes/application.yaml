@@ -1,0 +1,14 @@
+server:
+  port: 1161
+spring:
+  application:
+    name: dockerLMC
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://8.134.127.99:1672/jpa
+    password: Bb@136320
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
