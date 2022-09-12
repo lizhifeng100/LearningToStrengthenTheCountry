@@ -22,17 +22,10 @@ public class UserRepositoryImpl implements UserRepository {
 
 
     @Override
-    public void saveUser(String sign, String prData, String QRCode) {
-        LocalDateTime now = LocalDateTime.now();
-        UserPO user = new UserPO();
-        user.setPrData(prData);
-        user.setSign(sign);
-        user.setPrDataCreateAt(now);
-        user.setPrDataExpireAt(now.plusMinutes(5));
+    public void saveUser(UserPO user , LocalDateTime now) {
         user.setCreateTime(now);
         user.setIsDel(Constants.NO_DEL);
         user.setModifyTime(now);
-        user.setQRCode(QRCode);
         userJpa.save(user);
     }
 }

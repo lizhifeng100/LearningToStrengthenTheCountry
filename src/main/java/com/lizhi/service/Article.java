@@ -1,15 +1,10 @@
 package com.lizhi.service;
 
-import org.springframework.stereotype.Service;
-
 /**
- * @author: 荔枝
- * @date: 2022/9/3 15 32
- * @description: 文章阅读
+ * @author lizhi
  */
-@Service
-public class Article {
+public interface Article {
 
 
-
+    void readArticle();
 }

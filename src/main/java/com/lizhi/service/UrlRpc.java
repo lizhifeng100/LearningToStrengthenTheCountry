@@ -1,5 +1,10 @@
 package com.lizhi.service;
 
+import com.lizhi.DO.ScoreDO;
+import com.lizhi.entity.UserPO;
+
+import java.util.Map;
+
 /**
  * @author: 荔枝
  * @date: 2022/9/3 22 39
@@ -24,17 +29,43 @@ public interface UrlRpc {
     /**
      * 确认登陆是否成功
      *
-     * @param qrCode q
+     * @param qrData qrData
      * @return secret
      */
-    String confirmLogin(String qrCode);
+    String confirmLogin(String qrData);
 
     /**
-     * 检测登陆安全
+     * 检测登陆安全，获取token
      *
      * @param sign   sign
      * @param secret secret
      * @return 安全登陆
      */
-    Boolean secureCheck(String sign, String secret);
+    Map<String, String> secureCheck(String sign, String secret);
+
+    /**
+     * 获取名字和uid
+     *
+     * @param token token
+     * @return userPo
+     */
+    UserPO getUidAndName(String token);
+
+    /**
+     * 获取总积分
+     *
+     * @return 总积分
+     */
+    ScoreDO totalScore();
+
+    /**
+     * 每天的积分
+     *
+     * @return 每天积分
+     */
+    ScoreDO dailyScore();
+
+
+    void readArticle();
+
 }

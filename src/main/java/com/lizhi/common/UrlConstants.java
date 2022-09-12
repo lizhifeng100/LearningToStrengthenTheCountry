@@ -22,6 +22,18 @@ public class UrlConstants {
 
     public static String SERVER_CHAN_PUSH = "https://sctapi.ftqq.com/push";
 
+    public static String USER_INFO = "https://pc-api.xuexi.cn/open/api/user/info";
+
+    public static String TOTAL_SCORE = "https://pc-api.xuexi.cn/open/api/score/get";
+
+    public static String DAILY_SCORE = "https://pc-proxy-api.xuexi.cn/api/score/days/listScoreProgress?sence=score&deviceType=2";
+
+    public static String GO_TO = "https://oa.xuexi.cn";
+
+    public static String ALL_ARTICLE_URL = "https://www.xuexi.cn/c06bf4acc7eef6ef0a560328938b5771/data9a3668c13f6e303932b5e0e100fc248b.js";
+
+    public static String ARTICLE = "https://iflow-api.xuexi.cn/logflow/api/v1/pclog";
+
     public static String HOME_PAGE = "https://www.xuexi.cn/";
 
     public static String LOGIN_LINK = "https://pc.xuexi.cn/points/login.html";
@@ -37,5 +49,6 @@ public class UrlConstants {
     public static String SPECIAL_QUESTIONS = "https://pc.xuexi.cn/points/exam-paper-list.html";
 
     public static String WEEKLY_QUESTIONS = "https://pc.xuexi.cn/points/exam-weekly-list.html";
+
 
 }

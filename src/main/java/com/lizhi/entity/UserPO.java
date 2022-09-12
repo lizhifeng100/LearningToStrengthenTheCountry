@@ -2,7 +2,6 @@ package com.lizhi.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -13,51 +12,46 @@ import java.time.LocalDateTime;
  * @date: 2022/9/4 18 43
  * @description:
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
+@Table
 @Entity
 public class UserPO extends BasePO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
     private Long userId;
 
     /**
      * 用户名称
      */
-    @Basic
-    @Column(name = "name")
-    private String name;
+    @Column(name = "user_name")
+    private String userName;
+
+    /**
+     * 学习强国uid
+     */
     @Basic
     @Column(name = "uid")
-    private String uid;
-    @Basic
-    @Column(name = "sign")
-    private String sign;
-    @Basic
-    @Column(name = "pr_data")
-    private String prData;
-
-    @Basic
-    @Column(name = "qr_code")
-    private String QRCode;
+    private Long uid;
 
     /**
-     * prData 过期时间
+     * 学习强国的token
      */
     @Basic
-    @Column(name = "pr_data_expire")
-    private LocalDateTime prDataExpireAt;
+    @Column(name = "token")
+    private String token;
+
+    @Basic
+    @Column(name = "expireTime")
+    private LocalDateTime expireTime;
 
     /**
-     * prData 创建时间
+     * 订阅号的key
      */
     @Basic
-    @Column(name = "pr_data_create")
-    private LocalDateTime prDataCreateAt;
+    @Column(name = "my_key")
+    private String key;
 
 }
